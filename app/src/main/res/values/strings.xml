@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GloboChat</string>
+    <string name="title_dialog_status">Update Status</string>
+</resources>
