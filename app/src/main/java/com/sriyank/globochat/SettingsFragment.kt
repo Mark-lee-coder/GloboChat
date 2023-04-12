@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceManager
 
 class SettingsFragment : PreferenceFragmentCompat() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
@@ -18,5 +19,16 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
             true
         }
+
+        //Read Preference values in a fragment
+
+        //Step 1: Get reference to the SharedPreferences (XML file)
+        val sharedPreferences = context?.let {
+            PreferenceManager.getDefaultSharedPreferences(it)
+        }
+
+        //Step 2: Get the 'value' using the 'key'
+        val autoReplyTime = sharedPreferences?.getString(getString(R.string.key_auto_reply_time), "")
+        val autoDownload = sharedPreferences?.getBoolean(getString(R.string.key_auto_download), false)
     }
 }
