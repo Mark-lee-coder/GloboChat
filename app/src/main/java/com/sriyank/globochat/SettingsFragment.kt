@@ -72,7 +72,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
             if (key == "key_new_msg_notif") {
                 //Retrieve value from cloud or local db
             }
-
             return defValue
         }
 
